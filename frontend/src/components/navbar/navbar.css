@@ -1,0 +1,26 @@
+.navbar {
+  background: linear-gradient(red, transparent),
+    linear-gradient(to top left, lime, transparent),
+    linear-gradient(to top right, blue, transparent);
+  background-blend-mode: screen;
+}
+
+.link,
+.link:visited,
+.link:hover,
+.link:focus {
+  text-decoration: none;
+  color: rgb(68, 66, 66);
+}
+
+.linksDiv {
+  margin-right: 20px;
+
+}
+
+
+.signedinDiv {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}

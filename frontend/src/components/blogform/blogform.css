@@ -1,0 +1,19 @@
+.blogform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.error {
+  padding: 10px;
+  background: #ffe8e8;
+  border: 1px solid #febdbd;
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.errorForm {
+  background-color: #ffe8e8;
+}

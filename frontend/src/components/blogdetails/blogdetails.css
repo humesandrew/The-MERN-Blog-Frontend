@@ -1,0 +1,21 @@
+.postedDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.topDiv {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.bottomDiv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 10px;
+}
