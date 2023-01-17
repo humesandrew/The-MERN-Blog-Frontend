@@ -32,7 +32,7 @@ const Home = () => {
       // blogReducer fxn and passes in the action (the typeof SET WORKOUTS and this payload of json)//
       // so the whole object will go from property of null to whatever the payload is,//
       //which is the entire array of blogs on the server//
-      const response = await fetch("/api/blogs", {
+      const response = await fetch("https://the-mern-blog-backend.onrender.com/api/blogs", {
         headers: {'Authorization': `Bearer ${user.token}`}
       });
       const json = await response.json();
