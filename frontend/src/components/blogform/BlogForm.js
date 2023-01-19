@@ -27,7 +27,7 @@ export default function BlogForm() {
       return
     }
     const blog = { title, body, author };
-    const response = await fetch("api/blogs/", {
+    const response = await fetch("https://the-mern-blog-backend.onrender.com/api/blogs", {
       method: "POST",
       body: JSON.stringify(blog),
       headers: { "Content-Type": "application/json", 
