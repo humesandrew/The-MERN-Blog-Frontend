@@ -9,7 +9,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import "./blogform.css";
 
 // this line const { dispatch } fixed it so that the db updates in sync, but still it throws the//
-// missing 'dispatch' dependency error//
+// missing 'dispatch' dependency error// thats bc useEffect needs an empty array dependency "[]" at the end//
 
 export default function BlogForm() {
   const { dispatch } = useBlogsContext();
