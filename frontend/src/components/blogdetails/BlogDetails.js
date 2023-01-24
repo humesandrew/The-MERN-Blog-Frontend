@@ -60,10 +60,11 @@ export default function BlogDetails({ blog }) {
     if (!user) {
       return
     }
+    if (user) {
     const response = await fetch("https://the-mern-blog-backend.onrender.com/api/blogs/" + blog._id, {
       method: "DELETE",
       headers: {"Authorization": `Bearer ${user.token}`}
-    });
+    });}
     const json = await response.json();
     //the json data will be the document that was just deleted//
     if (response.ok) {
