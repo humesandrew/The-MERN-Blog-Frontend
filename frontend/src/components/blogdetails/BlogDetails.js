@@ -57,21 +57,21 @@ export default function BlogDetails({ blog }) {
   
   const [expanded, setExpanded] = React.useState(null);
   const handleDelete = async () => {
-    if (!user) {
-      return
-    }
     if (user) {
-    const response = await fetch("https://the-mern-blog-backend.onrender.com/api/blogs/" + blog._id, {
-      method: "DELETE",
-      headers: {"Authorization": `Bearer ${user.token}`}
-    });}
-    const json = await response.json();
-    //the json data will be the document that was just deleted//
-    if (response.ok) {
-      dispatch({ type: "DELETE_BLOG", payload: json });
-      //here we want to update our BlogsContext state (our global state)//
+      const response = await fetch("https://the-mern-blog-backend.onrender.com/api/blogs/" + blog._id, {
+        method: "DELETE",
+        headers: {"Authorization": `Bearer ${user.token}`}
+      })
+      const json = await response.json();
+      //the json data will be the document that was just deleted//
+      if (response.ok) {
+        dispatch({ type: "DELETE_BLOG", payload: json });
+        //here we want to update our BlogsContext state (our global state)//
+      }
+    };
     }
-  };
+    
+   
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
