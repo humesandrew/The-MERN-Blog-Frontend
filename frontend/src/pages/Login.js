@@ -43,7 +43,7 @@ const Login = () => {
         textAlign: "center",
       }}
     >
-      Login to the MERN Blog
+      Login to the College Cooking
     </Typography>
     <TextField
       id="outlined-basic"

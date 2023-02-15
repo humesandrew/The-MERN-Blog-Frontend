@@ -57,6 +57,9 @@ export default function BlogDetails({ blog }) {
 
   const [expanded, setExpanded] = React.useState(null);
   const handleDelete = async () => {
+
+    //line 62 is what i added with ol GP, and it now says unauthorzied to delete for everyone//
+    // im leaving it for now to publish// 
     if (user && user._id === blog.user_id) {
       const response = await fetch(
         "https://the-mern-blog-backend.onrender.com/api/blogs/" + blog._id,

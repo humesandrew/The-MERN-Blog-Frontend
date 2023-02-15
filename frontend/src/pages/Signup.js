@@ -41,7 +41,7 @@ const Signup = () => {
         textAlign: "center",
       }}
     >
-      Signup for the MERN Blog
+      Signup for College Cooking
     </Typography>
     <TextField
       id="outlined-basic"

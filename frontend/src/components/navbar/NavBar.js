@@ -86,7 +86,7 @@ export default function NavBar() {
             }}
           >
             <Link to="/" className="link">
-              <h2>The MERN Blog </h2>{" "}
+              <h2>College Cooking! </h2>{" "}
             </Link>
           </Typography>
           <div className="linksDiv">
