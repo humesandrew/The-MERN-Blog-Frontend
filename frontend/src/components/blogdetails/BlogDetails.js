@@ -54,24 +54,29 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 export default function BlogDetails({ blog }) {
   const { dispatch } = useBlogsContext();
   const { user } = useAuthContext();
-  
+
   const [expanded, setExpanded] = React.useState(null);
   const handleDelete = async () => {
-    if (user) {
-      const response = await fetch("https://the-mern-blog-backend.onrender.com/api/blogs/" + blog._id, {
-        method: "DELETE",
-        headers: {"Authorization": `Bearer ${user.token}`}
-      })
+    if (user && user._id === blog.user_id) {
+      const response = await fetch(
+        "https://the-mern-blog-backend.onrender.com/api/blogs/" + blog._id,
+        {
+          method: "DELETE",
+          headers: { Authorization: `Bearer ${user.token}` },
+        }
+      );
       const json = await response.json();
       //the json data will be the document that was just deleted//
       if (response.ok) {
         dispatch({ type: "DELETE_BLOG", payload: json });
         //here we want to update our BlogsContext state (our global state)//
       }
-    };
+    } else {
+      // User is not authenticated or not the creator of the blog post
+      console.log("You are not authorized to delete this blog post");
     }
-    
-   
+  };
+
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
@@ -107,13 +112,15 @@ export default function BlogDetails({ blog }) {
                   <Typography sx={{ marginRight: 3 }} component="div">
                     Written by: {blog.author}
                   </Typography>
-                 {user ? <Chip
-                    label="Delete post"
-                    onClick={handleDelete}
-                    onDelete={handleDelete}
-                    deleteIcon={<DeleteIcon />}
-                    variant="outlined"
-                  ></Chip> : null}
+                  {user ? (
+                    <Chip
+                      label="Delete post"
+                      onClick={handleDelete}
+                      onDelete={handleDelete}
+                      deleteIcon={<DeleteIcon />}
+                      variant="outlined"
+                    ></Chip>
+                  ) : null}
                 </div>
               </div>
             </AccordionDetails>
