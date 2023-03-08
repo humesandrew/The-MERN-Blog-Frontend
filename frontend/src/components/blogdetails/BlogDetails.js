@@ -114,7 +114,7 @@ export default function BlogDetails({ blog }) {
                 <div className="bottomDiv">
                   <Typography sx={{ marginRight: 3 }} component="div">
                     Written by: {blog.author}
-                    User id: {blog.user_id}
+                    Blog id: {blog._id}
                   </Typography>
                   {user ? (
                     <Chip
