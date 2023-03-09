@@ -78,7 +78,7 @@ export default function BlogDetails({ blog }) {
       // User is not authenticated or not the creator of the blog post
       console.log("You are not authorized to delete this blog post");
       console.log('User object:' + user);
-      console.log('user._id: ' + user._id);
+      console.log('user._id: ' + user.user_id);
       console.log('blog.user_id: ' + blog.user_id);
     }
   };
