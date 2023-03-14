@@ -26,7 +26,7 @@ export default function BlogForm() {
       setError('You must be logged in.');
       return
     }
-    const blog = { title, body, author };
+    const blog = { title, body, author, user_id };
     const response = await fetch("https://the-mern-blog-backend.onrender.com/api/blogs", {
       method: "POST",
       body: JSON.stringify(blog),

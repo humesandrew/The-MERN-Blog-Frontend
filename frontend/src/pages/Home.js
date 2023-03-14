@@ -55,7 +55,7 @@ if (user) {
     <div className="home">
       <div className="blogs">
         <div className="mernDiv">
-          <h1>Welcome to the College Cooking!</h1>
+          <h1>Welcome to the College Cooking blog!</h1>
         </div>
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={2}>
