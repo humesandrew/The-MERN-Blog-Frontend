@@ -41,12 +41,12 @@ export default function BlogForm() {
     }
     if (response.ok) {
       setError(null);
-      console.log("new blog added successfully");
+      // console.log("new blog added successfully");//
       setTitle("");
       setBody("");
       setAuthor("");
       dispatch({ type: "CREATE_BLOG", payload: json });
-      console.log("new blog created successfully");
+      // console.log("new blog created successfully");//
       setEmptyFields([]);
     }
   };
