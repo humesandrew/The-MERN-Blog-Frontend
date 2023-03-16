@@ -81,13 +81,13 @@ export default function NavBar() {
             component="div"
             sx={{
               flexGrow: 1,
-              display: { xs: "none", sm: "block" },
+              display: { xs: "none", sm: "block", letterSpacing: 5, fontWeight: 'bold' },
               textAlign: "center",
             }}
           >
-            <Link to="/" className="link">
-              <h2>College Cooking! </h2>{" "}
-            </Link>
+            
+              <h2>College Cooking</h2>{" "}
+           
           </Typography>
           <div className="linksDiv">
            {!user && (<div><Typography
